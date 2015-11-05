@@ -1,8 +1,11 @@
+#encoding:utf-8
+
+from db import DB
 __author__ = 'xt'
 
-source_id = {'douban': 1,
-             'guoke': 2,
-             'tengxun': 3,
-             'sina': 4,
-             '36kr': 5,
-             }
+db = DB()
+datas = db.get_media_info()
+source_id = {}
+for data in datas:
+    source_id[str(data[0])] = int(data[1])
+
